@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/sitemap.xml
