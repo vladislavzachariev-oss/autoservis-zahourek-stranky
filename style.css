@@ -66,7 +66,7 @@ h1 span{display:block}
 .prace{display:grid;grid-template-columns:minmax(0,1fr);column-gap:2.5rem}
 .prace li{display:grid;grid-template-columns:minmax(0,1fr);gap:.2rem 2rem;border-top:2px solid var(--cerna);padding:.8rem 0 1rem;min-width:0}
 .prace :is(h2,h3){font-weight:800;font-stretch:88%;font-size:clamp(1.5rem,6.6vw,1.75rem);line-height:1.08;text-transform:uppercase}
-.prace p{color:var(--seda)}
+.prace p{color:var(--seda);text-wrap:balance}
 .prace .zdarma{background:var(--zluta);padding-inline:.85rem}
 .prace .zdarma p{color:var(--cerna)}
 .take{padding-top:1rem;max-width:44rem}
