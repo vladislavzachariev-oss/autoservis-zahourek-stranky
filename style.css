@@ -42,6 +42,8 @@ a:hover{text-decoration-thickness:3px}
 .uvod-hlava > *{min-width:0}
 h1{font-size:clamp(2.75rem,12.4vw,6.25rem)}
 h1 span{display:block}
+#jmeno span:first-child{font-size:1.2em}
+#jmeno span:last-child{font-size:.6em;margin-top:.14em}
 .uvod-bok{display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;align-content:end;justify-items:start}
 .uvod-co{font-size:1.125rem;line-height:1.4;font-weight:500;max-width:24rem}
 .volat{display:block;background:var(--cerna);color:var(--bila);text-decoration:none;padding:.7rem 1.1rem .8rem;border-radius:2px}
