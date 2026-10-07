@@ -7,6 +7,7 @@
 - E-mail: kawazahy@seznam.cz
 - Otevírací doba: pondělí až pátek 8:00–16:00, sobota po telefonické domluvě, neděle zavřeno
 - Svátky: otevřeno po telefonické domluvě; zavřeno o Velikonocích a o Vánocích
+- Objednání opravy: telefonem nebo formulářem na stránce objednavka.html
 - Platba: hotově i kartou
 - Provozovatel: Jan Žahourek, IČO 70699623
 

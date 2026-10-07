@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autoservis a pneuservis Česká Lípa | Autoservis Žahourek Jan, Mariánská 3103</title>
-<meta name="description" content="Autoservis, pneuservis, klimatizace, laserová geometrie a diagnostika v České Lípě. Mariánská 3103, pondělí až pátek 8–16, telefon 777 885 475.">
-<link rel="canonical" href="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/">
+<title>Objednat opravu | Autoservis Žahourek Jan, Česká Lípa</title>
+<meta name="description" content="Napište, co auto potřebuje, a zavoláme vám zpátky s termínem. Autoservis Žahourek Jan, Mariánská 3103, Česká Lípa, telefon 777 885 475.">
+<link rel="canonical" href="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/objednavka.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:title" content="Autoservis a pneuservis Česká Lípa | Autoservis Žahourek Jan, Mariánská 3103">
-<meta property="og:description" content="Autoservis, pneuservis, klimatizace, laserová geometrie a diagnostika v České Lípě. Mariánská 3103, pondělí až pátek 8–16, telefon 777 885 475.">
-<meta property="og:url" content="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/">
+<meta property="og:title" content="Objednat opravu | Autoservis Žahourek Jan, Česká Lípa">
+<meta property="og:description" content="Napište, co auto potřebuje, a zavoláme vám zpátky s termínem. Autoservis Žahourek Jan, Mariánská 3103, Česká Lípa, telefon 777 885 475.">
+<meta property="og:url" content="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/objednavka.html">
 <meta property="og:image" content="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/dilna-1100.webp" imagesrcset="img/dilna-640.webp 640w, img/dilna-1100.webp 1100w, img/dilna-2000.webp 2000w" imagesizes="(min-width:76rem) 70rem, 100vw" type="image/webp">
 <link rel="stylesheet" href="style.css?v=3">
 <script type="application/ld+json">
 {
@@ -70,7 +69,7 @@
 <header class="lista">
   <div class="frame">
     <nav class="menu" aria-label="Stránky webu">
-      <a href="./" aria-current="page">Úvod</a>
+      <a href="./">Úvod</a>
       <a href="sluzby.html">Služby</a>
       <a href="fotky.html">Fotky</a>
       <a href="recenze.html">Recenze</a>
@@ -82,34 +81,58 @@
 
 <main id="obsah">
 
-<section class="uvod" aria-labelledby="jmeno">
-  <div class="frame uvod-hlava">
-    <h1 class="napis" id="jmeno"><span>Autoservis</span> <span>Žahourek Jan</span></h1>
-    <div class="uvod-bok">
-      <p class="uvod-co">Autoservis a&nbsp;pneuservis v&nbsp;České Lípě. Osobní auta, dodávky, SUV a&nbsp;4×4 všech značek.</p>
-      <a class="volat" href="tel:+420777885475">
-        <span class="volat-pop">Zavolejte nám</span>
-        <span class="volat-cislo">777&nbsp;885&nbsp;475</span>
-      </a>
-      <p class="ted" id="ted"><i aria-hidden="true"></i><span>Pondělí až pátek 8–16</span></p>
+<header class="podhlava">
+  <div class="frame">
+    <a class="zpet" href="./">Autoservis Žahourek Jan</a>
+    <h1 class="napis">Objednat opravu</h1>
+  </div>
+</header>
+
+<section class="pas">
+  <div class="frame dvoj">
+    <div>
+      <p class="k-nadpisu" style="margin-top:0"><strong>Napište, co auto potřebuje.</strong> Zavoláme vám zpátky a&nbsp;domluvíme termín.</p>
+      <p class="k-nadpisu">Spěchá to? Volejte <a href="tel:+420777885475"><strong>777&nbsp;885&nbsp;475</strong></a>, pondělí až pátek 8–16.</p>
+    </div>
+    <div>
+      <p class="hotovo" id="odeslano"><strong>Odesláno.</strong> Děkujeme, zavoláme vám a&nbsp;domluvíme termín.</p>
+      <form class="objednavka" id="objednavka" action="https://formsubmit.co/kawazahy@seznam.cz" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Objednávka opravy z webu">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://vladislavzachariev-oss.github.io/autoservis-zahourek-stranky/objednavka.html#odeslano">
+        <input class="med" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="pole">
+          <label for="o-jmeno">Jméno a&nbsp;příjmení</label>
+          <input id="o-jmeno" name="Jméno" type="text" autocomplete="name" required aria-describedby="o-jmeno-ch" data-chyba="Napište prosím své jméno.">
+          <p class="chyba" id="o-jmeno-ch" aria-live="polite"></p>
+        </div>
+        <div class="pole">
+          <label for="o-telefon">Telefon</label>
+          <input id="o-telefon" name="Telefon" type="text" inputmode="tel" autocomplete="tel" required aria-describedby="o-telefon-ch" data-chyba="Napište prosím telefon, na který vám zavoláme.">
+          <p class="chyba" id="o-telefon-ch" aria-live="polite"></p>
+        </div>
+        <div class="pole">
+          <label for="o-auto">Auto <span>značka, model a&nbsp;rok výroby</span></label>
+          <input id="o-auto" name="Auto" type="text" autocomplete="off" required aria-describedby="o-auto-ch" data-chyba="Napište prosím, o jaké auto jde.">
+          <p class="chyba" id="o-auto-ch" aria-live="polite"></p>
+        </div>
+        <div class="pole">
+          <label for="o-co">Co auto potřebuje</label>
+          <textarea id="o-co" name="Co potřebuje" rows="5" required aria-describedby="o-co-ch" data-chyba="Napište prosím, co máme opravit nebo zkontrolovat."></textarea>
+          <p class="chyba" id="o-co-ch" aria-live="polite"></p>
+        </div>
+        <div class="pole">
+          <label for="o-kdy">Kdy se vám to hodí <span>nepovinné</span></label>
+          <input id="o-kdy" name="Kdy se to hodí" type="text" autocomplete="off">
+          <p class="chyba" aria-hidden="true"></p>
+        </div>
+        <p class="nejde" id="o-nejde" role="alert" hidden>Odeslat se nepodařilo. Zavolejte nám prosím na <a href="tel:+420777885475">777&nbsp;885&nbsp;475</a>.</p>
+        <button type="submit">Odeslat objednávku</button>
+        <p class="udaje">Údaje použijeme jen k&nbsp;vyřízení vaší objednávky. Zprávu doručí do e-mailu autoservisu služba FormSubmit.</p>
+      </form>
     </div>
   </div>
-  <figure class="frame uvod-foto">
-    <picture>
-      <source type="image/webp" srcset="img/dilna-640.webp 640w, img/dilna-1100.webp 1100w, img/dilna-2000.webp 2000w" sizes="(min-width:76rem) 70rem, 100vw">
-      <img src="img/dilna-1100.jpg" srcset="img/dilna-640.jpg 640w, img/dilna-1100.jpg 1100w, img/dilna-2000.jpg 2000w" sizes="(min-width:76rem) 70rem, 100vw" width="2000" height="1179" alt="Budova autoservisu v Mariánské ulici v České Lípě se žlutými cedulemi Autoservis, Servis a plnění klimatizací, Jan Žahourek 777 885 475" fetchpriority="high">
-    </picture>
-    <figcaption>Mariánská 3103, Česká Lípa. Poznáte nás podle žlutých cedulí.</figcaption>
-  </figure>
 </section>
-
-<nav class="frame rozcestnik" aria-label="Kam dál">
-  <a href="sluzby.html"><b>Služby</b><span>Autoservis, pneuservis, klimatizace, geometrie, motory, diagnostika</span><i aria-hidden="true">&rarr;</i></a>
-  <a href="fotky.html"><b>Fotky</b><span>Osm fotek z&nbsp;dílny</span><i aria-hidden="true">&rarr;</i></a>
-  <a href="recenze.html"><b>Recenze</b><span>4,6 ze 76 hodnocení na Googlu</span><i aria-hidden="true">&rarr;</i></a>
-  <a href="kontakt.html"><b>Kontakt</b><span>Mariánská 3103, pondělí až pátek 8–16, mapa</span><i aria-hidden="true">&rarr;</i></a>
-  <a class="objednat" href="objednavka.html"><b>Objednat opravu</b><span>Napište, co auto potřebuje, zavoláme vám s&nbsp;termínem</span><i aria-hidden="true">&rarr;</i></a>
-</nav>
 
 </main>
 

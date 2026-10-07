@@ -51,6 +51,50 @@
 })();
 
 (function(){
+  // objednávka opravy: chyba se ukáže až po opuštění pole, při psaní jen mizí
+  var f=document.getElementById('objednavka');
+  if(!f||!window.fetch||!window.URLSearchParams)return;
+  var pole=[].slice.call(f.querySelectorAll('[data-chyba]')),btn=f.querySelector('button'),nejde=document.getElementById('o-nejde');
+  function vada(el){
+    var v=el.value.trim();
+    if(!v)return el.getAttribute('data-chyba');
+    if(el.name==='Telefon'&&v.replace(/\D/g,'').length<9)return 'Telefon má mít aspoň 9 číslic.';
+    return '';
+  }
+  function over(el){
+    var t=vada(el);
+    document.getElementById(el.id+'-ch').textContent=t;
+    if(t)el.setAttribute('aria-invalid','true');else el.removeAttribute('aria-invalid');
+    return !t;
+  }
+  pole.forEach(function(el){
+    el.addEventListener('blur',function(){over(el)});
+    el.addEventListener('input',function(){if(el.hasAttribute('aria-invalid'))over(el)});
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var spatne=pole.filter(function(el){return !over(el)});
+    if(spatne.length){spatne[0].focus();return}
+    var data=new URLSearchParams(new FormData(f)),tel=f.elements['Telefon'].value.trim();
+    data.delete('_next');data.set('_captcha','false');
+    nejde.hidden=true;btn.disabled=true;btn.textContent='Odesílám…';
+    fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:data})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(String(j.success)!=='true')throw new Error('neodesláno');
+        var p=document.createElement('p'),s=document.createElement('strong');
+        p.className='hotovo';p.setAttribute('role','status');p.tabIndex=-1;
+        s.textContent='Odesláno.';
+        p.appendChild(s);
+        p.appendChild(document.createTextNode(' Děkujeme, zavoláme vám na číslo '+tel+' a domluvíme termín.'));
+        f.parentNode.replaceChild(p,f);
+        p.focus();
+      })
+      .catch(function(){btn.disabled=false;btn.textContent='Odeslat objednávku';nejde.hidden=false});
+  });
+})();
+
+(function(){
   var dlg=document.getElementById('svetlo'),odkazy=[].slice.call(document.querySelectorAll('#galerie a'));
   if(!dlg||!dlg.showModal||!odkazy.length)return;
   var img=document.getElementById('svetlo-img'),popis=document.getElementById('svetlo-popis'),ktera=0;
