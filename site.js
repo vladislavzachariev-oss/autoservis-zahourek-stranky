@@ -44,13 +44,6 @@
 })();
 
 (function(){
-  // na mobilu je tlačítko Volejte přilepené dole; dokud je vidět velké číslo nahoře, není potřeba dvakrát
-  var velke=document.querySelector('.volat'),male=document.querySelector('.lista-tel');
-  if(!velke||!male||!('IntersectionObserver' in window))return;
-  new IntersectionObserver(function(z){male.classList.toggle('schovat',z[0].isIntersecting)}).observe(velke);
-})();
-
-(function(){
   // objednávka opravy: chyba se ukáže až po opuštění pole, při psaní jen mizí
   var f=document.getElementById('objednavka');
   if(!f||!window.fetch||!window.URLSearchParams)return;

@@ -27,13 +27,20 @@ a:hover{text-decoration-thickness:3px}
 
 /* lišta */
 .lista{position:sticky;top:0;z-index:10;background:var(--cerna);color:var(--bila)}
-.lista .frame{display:flex;align-items:center;justify-content:space-between;gap:.75rem 1.5rem;min-height:3.5rem}
-.menu{display:flex;gap:clamp(.85rem,3.4vw,2rem);font-weight:600;font-size:1rem}
+.lista .frame{display:flex;align-items:center;gap:.5rem;min-height:3.5rem}
+.menu{display:flex;gap:clamp(.85rem,3.4vw,2rem);font-weight:600;font-size:1rem;margin-right:clamp(.35rem,1.6vw,1.25rem)}
 .menu a{text-decoration:none;padding:.9rem 0;border-bottom:3px solid transparent;margin-bottom:-3px}
 .menu a:hover,.menu a[aria-current]{border-bottom-color:var(--zluta)}
-.lista-tel{background:var(--zluta);color:var(--cerna);font-weight:800;font-size:1.0625rem;text-decoration:none;padding:.5rem .8rem;border-radius:2px;white-space:nowrap;font-variant-numeric:tabular-nums}
-.lista-tel:hover{background:var(--bila)}
+/* žlutá tlačítka: Objednat hned za menu, telefon a e-mail vpravo; na mobilu jsou všechna tři přilepená dole */
+.akce{display:contents}
+.akce a{background:var(--zluta);color:var(--cerna);font-weight:800;font-size:1.0625rem;text-decoration:none;padding:.5rem .8rem;border-radius:2px;white-space:nowrap}
+.akce a:hover{background:var(--bila)}
+.lista-obj{margin-right:auto}
+.lista-obj[aria-current]{box-shadow:inset 0 -3px 0 var(--cerna)}
+.lista-tel{font-variant-numeric:tabular-nums}
 .lista-tel span{font-weight:500}
+.akce .lista-mail{font-weight:600}
+.m-kr{display:none}
 
 /* úvod: nápis, telefon, pod tím fotka */
 .uvod{position:relative;padding-top:clamp(1.5rem,4vw,2.25rem)}
@@ -41,7 +48,7 @@ a:hover{text-decoration-thickness:3px}
 .uvod > *{position:relative}
 .uvod-hlava{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem;padding-bottom:clamp(1.25rem,3.5vw,2rem)}
 .uvod-hlava > *{min-width:0}
-h1{font-size:clamp(2.75rem,12.4vw,6.25rem)}
+h1{font-size:clamp(2.25rem,12.4vw,6.25rem)}
 h1 span{display:block}
 #jmeno span:first-child{font-size:1.2em}
 #jmeno span:last-child{font-size:.6em;margin-top:.14em}
@@ -153,15 +160,25 @@ h1 span{display:block}
   .uvod-co{max-width:19rem}
   .uvod-bok{padding-bottom:.35rem}
 }
+@media (max-width:65.99rem){
+  .m-adr{display:none}
+  .m-kr{display:inline}
+}
 @media (max-width:33.99rem){
-  .pata .frame{padding-bottom:5rem}
   .menu{width:100%;justify-content:space-between;gap:.4rem}
-  .lista-tel{position:fixed;left:0;right:0;bottom:0;z-index:10;border-radius:0;text-align:center;font-size:1.1875rem;
-    padding:.8rem 1rem calc(.8rem + env(safe-area-inset-bottom));border-top:2px solid var(--cerna)}
-  .lista-tel.schovat{visibility:hidden}
+}
+@media (max-width:55.99rem){
+  .pata .frame{padding-bottom:5.5rem}
+  .menu{margin-right:0}
+  .akce{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--zluta);
+    border-top:2px solid var(--cerna);padding-bottom:env(safe-area-inset-bottom)}
+  .akce a{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:3.5rem;padding:.4rem .6rem;border-radius:0;line-height:1.15;margin:0}
+  .akce a + a{border-left:2px solid var(--cerna)}
+  .lista-tel span{font-size:.8125rem;font-weight:600}
 }
 @media (prefers-reduced-motion:no-preference){
-  .lista-tel,.volat-cislo,.tlac a,.svetlo button{transition:background-color .15s,color .15s}
+  .akce a,.volat-cislo,.tlac a,.svetlo button{transition:background-color .15s,color .15s}
 }
 
 /* podstránky: žlutá hlava se jménem (odkaz domů) a názvem stránky */
@@ -211,8 +228,8 @@ h1 span{display:block}
 .hotovo{max-width:36rem;font-size:1.25rem;line-height:1.4;font-weight:500;border-top:2px solid var(--cerna);padding-top:1rem}
 #odeslano{display:none}
 #odeslano:target{display:block;margin-bottom:2rem}
-@media (max-width:33.99rem){
-  body:has(.objednavka :is(input,textarea):focus) .lista-tel{visibility:hidden}
+@media (max-width:55.99rem){
+  body:has(.objednavka :is(input,textarea):focus) .akce{visibility:hidden}
 }
 @media (max-width:22.49rem){
   .menu{font-size:.9375rem}
